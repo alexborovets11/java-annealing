@@ -75,11 +75,22 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
-    
+
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
 
+  @Test
+  void testMaxLength_allEmptyStrings() {
+    Set<String> input = Set.of("");
+    assertEquals(0, ProblemSolving.maxLength(input));
+  }
+
+  @Test
+  void testMaxLength_includesSpecialCharacters() {
+    Set<String> input = Set.of("a!", "b@#$", "normal", "extraordinary!!!");
+    assertEquals(16, ProblemSolving.maxLength(input));
+  }
 }
