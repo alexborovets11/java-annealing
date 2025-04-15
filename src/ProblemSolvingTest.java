@@ -93,4 +93,17 @@ public class ProblemSolvingTest {
     Set<String> input = Set.of("a!", "b@#$", "normal", "extraordinary!!!");
     assertEquals(16, ProblemSolving.maxLength(input));
   }
+
+
+  @Test
+  void testMinLength_singleSpace() {
+    Set<String> input = Set.of(" ", "abc", "longword");
+    assertEquals(1, ProblemSolving.minLength(input));
+  }
+
+  @Test
+  void testMinLength_sameShortLengthWords() {
+    Set<String> input = Set.of("hi", "by", "my");
+    assertEquals(2, ProblemSolving.minLength(input));
+  }
 }
