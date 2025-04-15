@@ -94,6 +94,11 @@ public class ProblemSolvingTest {
     assertEquals(16, ProblemSolving.maxLength(input));
   }
 
+  @Test
+  void testMaxLength_wordsWithSpaces() {
+    Set<String> input = Set.of("short", "longer ", " longest  ");
+    assertEquals(10, ProblemSolving.maxLength(input));
+  }
 
   @Test
   void testMinLength_singleSpace() {
@@ -106,4 +111,17 @@ public class ProblemSolvingTest {
     Set<String> input = Set.of("hi", "by", "my");
     assertEquals(2, ProblemSolving.minLength(input));
   }
+
+  @Test
+  void testMinLength_oneVeryShortAmongLong() {
+    Set<String> input = Set.of("encyclopedia", "microbiology", "a");
+    assertEquals(1, ProblemSolving.minLength(input));
+  }
+
+  @Test
+  void testMinLength_wordWithTabOrNewline() {
+    Set<String> input = Set.of("\n", "\t", "abc");
+    assertEquals(1, ProblemSolving.minLength(input));
+  }
+
 }
